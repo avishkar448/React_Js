@@ -4,9 +4,11 @@ import React from "react";
 import "./App.css";
 
 //import {Route,Router,Routes} from 'react-router-dom'
-import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
-import Home2 from "./components/Home2";
-import About2 from "./components/About2";
+// import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+// import Home2 from "./components/Home2";
+// import About2 from "./components/About2";
+import { CountProvider } from "./context/CountContext";
+import CounterConst from "./components/CounterConst";
 // import 'bootstrap/dist/css/bootstrap.min.css'
 // import {Container,Button,Nav,Navbar,Alert, NavLink} from 'react-bootstrap'
 // import { useState } from "react";
@@ -189,14 +191,17 @@ function App() {
       <DisplayData/>
     </DataProvider> */}
 
-    <Router>
+    {/* <Router>
       <Routes>
         <Route path="/" element={<Home2/>}/>
         <Route path="/about" element={<About2/>}/>
       </Routes>
-    </Router>
+    </Router> */}
 
-    
+    <CountProvider>
+      <CounterConst/>
+    </CountProvider>
+
     </div>
   );
 }
